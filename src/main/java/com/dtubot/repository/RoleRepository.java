@@ -1,0 +1,16 @@
+package com.dtubot.repository;
+
+
+
+import com.dtubot.entity.security.constant.ERoleName;
+import com.dtubot.entity.security.utils.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface RoleRepository extends JpaRepository<Role, Integer> {
+    Optional<Role> findByRoleName(ERoleName roleName);
+
+}
