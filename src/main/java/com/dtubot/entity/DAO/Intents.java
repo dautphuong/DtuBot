@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 public class Intents {

@@ -32,4 +32,5 @@ public class IntentsController {
         return new ResponseEntity<>(this.intentsService.findAll(), HttpStatus.OK);
     }
 
+
 }
