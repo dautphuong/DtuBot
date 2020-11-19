@@ -6,11 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Report {
+public class NonAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String answerError;
+    private String question;
     private String dayTime;
     private String respondent;
 
@@ -22,12 +22,12 @@ public class Report {
         this.id = id;
     }
 
-    public String getAnswerError() {
-        return answerError;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setAnswerError(String answerError) {
-        this.answerError = answerError;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
     public String getDayTime() {
