@@ -26,7 +26,7 @@ public class IntentsController {
     }
 
     @GetMapping("/list-tag")
-    public ResponseEntity<List<Intents>> getAllStatusAuction() {
+    public ResponseEntity<List<Intents>> getAllIntents() {
         return new ResponseEntity<>(intentsService.findAll(), HttpStatus.OK);
     }
 
@@ -40,4 +40,6 @@ public class IntentsController {
         intentsService.remove(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 }

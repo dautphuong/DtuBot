@@ -30,4 +30,6 @@ public class IntentsServiceImpl implements IntentsService {
     public void remove(String id) {
         intentsRepository.deleteById(id);
     }
+
+
 }
