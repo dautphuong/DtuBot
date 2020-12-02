@@ -10,6 +10,7 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String questionGuest;
     private String answerError;
     private String dayTime;
     private String respondent;
@@ -44,5 +45,13 @@ public class Report {
 
     public void setRespondent(String respondent) {
         this.respondent = respondent;
+    }
+
+    public String getQuestionGuest() {
+        return questionGuest;
+    }
+
+    public void setQuestionGuest(String questionGuest) {
+        this.questionGuest = questionGuest;
     }
 }
