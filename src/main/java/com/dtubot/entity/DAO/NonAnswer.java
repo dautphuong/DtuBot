@@ -11,7 +11,8 @@ public class NonAnswer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String question;
-    private String dayTime;
+    private String timeReport;
+    private String responseTime;
     private String respondent;
 
     public Integer getId() {
@@ -30,12 +31,20 @@ public class NonAnswer {
         this.question = question;
     }
 
-    public String getDayTime() {
-        return dayTime;
+    public String getTimeReport() {
+        return timeReport;
     }
 
-    public void setDayTime(String dayTime) {
-        this.dayTime = dayTime;
+    public void setTimeReport(String timeReport) {
+        this.timeReport = timeReport;
+    }
+
+    public String getResponseTime() {
+        return responseTime;
+    }
+
+    public void setResponseTime(String responseTime) {
+        this.responseTime = responseTime;
     }
 
     public String getRespondent() {
