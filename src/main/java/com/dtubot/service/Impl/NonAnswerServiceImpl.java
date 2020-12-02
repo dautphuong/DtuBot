@@ -32,4 +32,14 @@ public class NonAnswerServiceImpl implements NonAnswerService {
     public void remove(Integer id) {
         nonAnswerRepository.deleteById(id);
     }
+
+    @Override
+    public List<NonAnswer> findNonAnswerByRespondentNotNull() {
+        return nonAnswerRepository.findNonAnswerByRespondentNotNull();
+    }
+
+    @Override
+    public List<NonAnswer> findNonAnswerByRespondentNull() {
+        return nonAnswerRepository.findNonAnswerByRespondentNull();
+    }
 }

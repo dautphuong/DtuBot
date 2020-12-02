@@ -12,4 +12,9 @@ public interface NonAnswerService {
     void save(NonAnswer nonAnswer);
 
     void remove(Integer id);
+
+    List<NonAnswer> findNonAnswerByRespondentNotNull();
+
+    List<NonAnswer> findNonAnswerByRespondentNull();
+
 }

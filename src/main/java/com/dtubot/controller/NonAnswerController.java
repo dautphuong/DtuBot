@@ -27,8 +27,8 @@ public class NonAnswerController {
     }
 
     @GetMapping("/list-nonAnswer")
-    public ResponseEntity<List<NonAnswer>> getAllStatusAuction() {
-        return new ResponseEntity<>(nonAnswerService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<NonAnswer>> getAllNonAnswer() {
+        return new ResponseEntity<>(nonAnswerService.findNonAnswerByRespondentNull(), HttpStatus.OK);
     }
 
     @GetMapping("/get-nonAnswer/{id}")
@@ -40,5 +40,10 @@ public class NonAnswerController {
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         nonAnswerService.remove(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/list-nonAnswer-report")
+    public ResponseEntity<List<NonAnswer>> getReport() {
+        return new ResponseEntity<>(nonAnswerService.findNonAnswerByRespondentNotNull(), HttpStatus.OK);
     }
 }
