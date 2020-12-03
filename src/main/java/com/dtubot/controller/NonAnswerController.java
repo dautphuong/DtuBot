@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class NonAnswerController {
     @Autowired
     NonAnswerService nonAnswerService;
