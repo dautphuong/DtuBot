@@ -12,4 +12,8 @@ public interface ReportService {
     void save(Report report);
 
     void remove(Integer id);
+
+    List<Report> findReportByRespondentNotNull();
+
+    List<Report> findReportByRespondentNull();
 }

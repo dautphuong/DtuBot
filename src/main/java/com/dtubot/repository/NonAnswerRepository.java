@@ -9,5 +9,4 @@ import java.util.List;
 public interface NonAnswerRepository extends JpaRepository<NonAnswer, Integer> {
     List<NonAnswer> findNonAnswerByRespondentNotNull();
     List<NonAnswer> findNonAnswerByRespondentNull();
-
 }

@@ -10,9 +10,9 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String questionGuest;
-    private String answerError;
-    private String dayTime;
+    private String textReport;
+    private String timeReport;
+    private String responseTime;
     private String respondent;
 
     public Integer getId() {
@@ -23,20 +23,28 @@ public class Report {
         this.id = id;
     }
 
-    public String getAnswerError() {
-        return answerError;
+    public String getTextReport() {
+        return textReport;
     }
 
-    public void setAnswerError(String answerError) {
-        this.answerError = answerError;
+    public void setTextReport(String textReport) {
+        this.textReport = textReport;
     }
 
-    public String getDayTime() {
-        return dayTime;
+    public String getTimeReport() {
+        return timeReport;
     }
 
-    public void setDayTime(String dayTime) {
-        this.dayTime = dayTime;
+    public void setTimeReport(String timeReport) {
+        this.timeReport = timeReport;
+    }
+
+    public String getResponseTime() {
+        return responseTime;
+    }
+
+    public void setResponseTime(String responseTime) {
+        this.responseTime = responseTime;
     }
 
     public String getRespondent() {
@@ -45,13 +53,5 @@ public class Report {
 
     public void setRespondent(String respondent) {
         this.respondent = respondent;
-    }
-
-    public String getQuestionGuest() {
-        return questionGuest;
-    }
-
-    public void setQuestionGuest(String questionGuest) {
-        this.questionGuest = questionGuest;
     }
 }

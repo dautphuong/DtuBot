@@ -30,7 +30,7 @@ public class ReportController {
 
     @GetMapping("/list-report")
     public ResponseEntity<List<Report>> getAllStatusAuction() {
-        return new ResponseEntity<>(reportService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(reportService.findReportByRespondentNull(), HttpStatus.OK);
     }
     @GetMapping("/get-report/{id}")
     public ResponseEntity<Report> getTag(@PathVariable Integer id) {
@@ -41,5 +41,10 @@ public class ReportController {
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         reportService.remove(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/list-report-history")
+    public ResponseEntity<List<Report>> getReport() {
+        return new ResponseEntity<>(reportService.findReportByRespondentNotNull(), HttpStatus.OK);
     }
 }

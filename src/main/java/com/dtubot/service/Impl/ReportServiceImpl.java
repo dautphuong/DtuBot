@@ -33,4 +33,14 @@ public class ReportServiceImpl implements ReportService {
     public void remove(Integer id) {
         reportRepository.deleteById(id);
     }
+
+    @Override
+    public List<Report> findReportByRespondentNotNull() {
+        return reportRepository.findReportByRespondentNotNull();
+    }
+
+    @Override
+    public List<Report> findReportByRespondentNull() {
+        return reportRepository.findReportByRespondentNull();
+    }
 }
