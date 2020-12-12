@@ -113,11 +113,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
                 User member = new User();
-                member.setUsername("member@gmail.com");
+                member.setUsername("member");
                 member.setPassword(passwordEncoder.encode("123123"));
                 member.setFullName("MEMBER");
                 member.setBirthday("2020-10-30");
-                member.setEmail("member@gmail.com");
+                member.setEmail("member");
                 member.setAddress("Da Nang");
                 member.setPhone("0123456799");
                 member.setGender("Nam");
