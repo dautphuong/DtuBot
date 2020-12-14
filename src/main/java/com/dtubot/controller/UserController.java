@@ -57,7 +57,6 @@ public class UserController {
                 userPrincipal.getId().toString(),
                 token,
                 userPrincipal.getUsername(),
-                userPrincipal.getEmail(),
                 userPrincipal.getAuthorities()
         );
         System.out.println(response);

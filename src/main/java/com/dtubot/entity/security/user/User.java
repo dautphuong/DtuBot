@@ -13,14 +13,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
-    private String fullName;
-    private String email; //email=username
     private String username;
     private String password;
-    private String gender;
-    private String birthday;
-    private String phone;
-    private String address;
+
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinTable (
@@ -39,17 +34,6 @@ public class User {
         this.userId = userId;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
     public String getUsername() {
         return username;
@@ -60,10 +44,6 @@ public class User {
     }
 
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -72,37 +52,6 @@ public class User {
         this.password = password;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public Set<Role> getRoles() {
         return roles;

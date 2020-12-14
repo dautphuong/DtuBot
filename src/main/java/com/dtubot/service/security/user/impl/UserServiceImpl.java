@@ -27,14 +27,8 @@ public class UserServiceImpl implements UserService {
     private User convertToUser(UserDTO userDto) {
         User user = new User();
         user.setUserId(userDto.getUserId());
-        user.setFullName(userDto.getFullName());
         user.setUsername(userDto.getUsername());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        user.setGender(userDto.getGender());
-        user.setEmail(userDto.getEmail());
-        user.setPhone(userDto.getPhone());
-        user.setBirthday(userDto.getBirthday());
-        user.setAddress(userDto.getAddress());
 
         Set<Role> roles = new HashSet<>();
         roles.add(roleRepository.findById(2).orElse(null));

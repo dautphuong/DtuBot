@@ -97,12 +97,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 admin.setUsername(adminUsername);
                 admin.setPassword(passwordEncoder.encode(adminPassword));
-                admin.setBirthday("2020-10-30");
-                admin.setFullName("ADMIN");
-                admin.setEmail("admin@gmail.com");
-                admin.setGender("Nam");
-                admin.setAddress("Da Nang");
-                admin.setPhone("0123456799");
                 admin.setRoles(roles);
                 userRepository.save(admin);
 
@@ -115,12 +109,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 User member = new User();
                 member.setUsername("member");
                 member.setPassword(passwordEncoder.encode("123123"));
-                member.setFullName("MEMBER");
-                member.setBirthday("2020-10-30");
-                member.setEmail("member");
-                member.setAddress("Da Nang");
-                member.setPhone("0123456799");
-                member.setGender("Nam");
                 member.setRoles(rolesForMember);
                 userRepository.save(member);
 
