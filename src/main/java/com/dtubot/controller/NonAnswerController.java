@@ -20,7 +20,7 @@ public class NonAnswerController {
     NonAnswerService nonAnswerService;
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @PostMapping("/save-nonAnswer")
-    public ResponseEntity<Intents> createProduct(@RequestBody NonAnswer nonAnswer, UriComponentsBuilder builder) {
+    public ResponseEntity<Intents> createNonAnswer(@RequestBody NonAnswer nonAnswer, UriComponentsBuilder builder) {
         nonAnswerService.save(nonAnswer);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/get-intent/{id}").buildAndExpand(nonAnswer.getId()).toUri());
@@ -33,7 +33,7 @@ public class NonAnswerController {
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @GetMapping("/get-nonAnswer/{id}")
-    public ResponseEntity<NonAnswer> getTag(@PathVariable Integer id) {
+    public ResponseEntity<NonAnswer> getNonAnswer(@PathVariable Integer id) {
         return new ResponseEntity<>(nonAnswerService.findById(id), HttpStatus.OK);
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
@@ -44,7 +44,7 @@ public class NonAnswerController {
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @GetMapping("/list-nonAnswer-report")
-    public ResponseEntity<List<NonAnswer>> getReport() {
+    public ResponseEntity<List<NonAnswer>> getHisNonAnswer() {
         return new ResponseEntity<>(nonAnswerService.findNonAnswerByRespondentNotNull(), HttpStatus.OK);
     }
 }

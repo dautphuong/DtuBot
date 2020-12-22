@@ -22,7 +22,7 @@ public class ReportController {
     ReportService reportService;
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @PostMapping("/save-report")
-    public ResponseEntity<Intents> createProduct(@RequestBody Report report, UriComponentsBuilder builder) {
+    public ResponseEntity<Intents> createReport(@RequestBody Report report, UriComponentsBuilder builder) {
         reportService.save(report);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/get-intent/{id}").buildAndExpand(report.getId()).toUri());
@@ -30,12 +30,12 @@ public class ReportController {
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @GetMapping("/list-report")
-    public ResponseEntity<List<Report>> getAllStatusAuction() {
+    public ResponseEntity<List<Report>> getListReport() {
         return new ResponseEntity<>(reportService.findReportByRespondentNull(), HttpStatus.OK);
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @GetMapping("/get-report/{id}")
-    public ResponseEntity<Report> getTag(@PathVariable Integer id) {
+    public ResponseEntity<Report> getReport(@PathVariable Integer id) {
         return new ResponseEntity<>(reportService.findById(id), HttpStatus.OK);
     }
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
@@ -44,9 +44,10 @@ public class ReportController {
         reportService.remove(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @GetMapping("/list-report-history")
-    public ResponseEntity<List<Report>> getReport() {
+    public ResponseEntity<List<Report>> getHisReport() {
         return new ResponseEntity<>(reportService.findReportByRespondentNotNull(), HttpStatus.OK);
     }
 }
