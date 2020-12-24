@@ -18,7 +18,6 @@ import java.util.List;
 public class NonAnswerController {
     @Autowired
     NonAnswerService nonAnswerService;
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @PostMapping("/save-nonAnswer")
     public ResponseEntity<Intents> createNonAnswer(@RequestBody NonAnswer nonAnswer, UriComponentsBuilder builder) {
         nonAnswerService.save(nonAnswer);

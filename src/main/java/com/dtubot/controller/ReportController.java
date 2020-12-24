@@ -20,7 +20,6 @@ import java.util.List;
 public class ReportController {
     @Autowired
     ReportService reportService;
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @PostMapping("/save-report")
     public ResponseEntity<Intents> createReport(@RequestBody Report report, UriComponentsBuilder builder) {
         reportService.save(report);
