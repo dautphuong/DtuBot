@@ -3,14 +3,12 @@ package com.dtubot.controller;
 import com.dtubot.entity.DAO.Intents;
 import com.dtubot.entity.DAO.NonAnswer;
 import com.dtubot.entity.DAO.Report;
-import com.dtubot.service.NonAnswerService;
 import com.dtubot.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -37,7 +35,7 @@ public class ReportController {
     public ResponseEntity<Report> getReport(@PathVariable Integer id) {
         return new ResponseEntity<>(reportService.findById(id), HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
+    @PreAuthorize(" hasRole('ADMIN')")
     @DeleteMapping("delete-report/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         reportService.remove(id);

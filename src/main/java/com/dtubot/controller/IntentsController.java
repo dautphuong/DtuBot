@@ -19,7 +19,7 @@ public class IntentsController {
     @Autowired
     IntentsService intentsService;
 
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
     @PostMapping("/save-tag")
     public ResponseEntity<Intents> createIntent(@RequestBody Intents intents, UriComponentsBuilder builder) {
         intentsService.save(intents);
@@ -34,7 +34,7 @@ public class IntentsController {
     public ResponseEntity<Intents> getTag(@PathVariable String id) {
         return new ResponseEntity<>(intentsService.findById(id), HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete-tag/{id}")
     public ResponseEntity<Void> delete(@PathVariable String id){
         intentsService.remove(id);

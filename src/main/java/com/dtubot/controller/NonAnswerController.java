@@ -35,7 +35,7 @@ public class NonAnswerController {
     public ResponseEntity<NonAnswer> getNonAnswer(@PathVariable Integer id) {
         return new ResponseEntity<>(nonAnswerService.findById(id), HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('MEMBER') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete-nonAnswer/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         nonAnswerService.remove(id);
